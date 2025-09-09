@@ -1,12 +1,89 @@
-# React + Vite
+# 📝 Frontend README.md (React.js + React Query)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```markdown
+# 🖥️ Task Manager UI (Frontend)
 
-Currently, two official plugins are available:
+This is the **Next.js (App Router) frontend** for the Task Manager app.  
+It provides a clean UI for **register/login and managing tasks**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
+- React.js
+- React Query (TanStack) for data fetching
+- Axios for API calls
+- TailwindCSS for styling
+- Context API for auth state
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Project Structure
+frontend/
+├── app/
+│ ├── globals.css
+│ ├── layout.tsx
+│ ├── page.tsx
+│ ├── login/page.tsx
+│ ├── register/page.tsx
+│ ├── dashboard/page.tsx
+│ └── tasks/
+│ ├── new/page.tsx
+│ └── [id]/page.tsx
+├── components/
+│ ├── Navbar.tsx
+│ └── TaskForm.tsx
+├── context/AuthContext.tsx
+├── lib/axios.ts
+├── package.json
+└── .env.local.example
+
+---
+
+## 🔧 Setup Instructions
+
+### 1. Clone repo
+```bash
+git clone https://github.com/your-username/task-manager-frontend.git
+cd task-manager-frontend
+2. Install dependencies
+bash
+Copy code
+npm install
+3. Configure environment variables
+Create .env.local file from .env.local.example:
+
+bash
+Copy code
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+👉 Change this URL to your deployed backend when hosting (e.g. https://your-api.onrender.com/api).
+
+4. Run frontend
+bash
+Copy code
+npm run dev
+Frontend runs on → http://localhost:3000
+
+🔗 Pages
+/login → Login page
+
+/register → Register page
+
+/dashboard → Task dashboard (list + search + filter)
+
+/tasks/new → Create task
+
+/tasks/[id] → Edit task
+
+yaml
+Copy code
+
+---
+
+✅ With these two **separate repos + READMEs**, you can push:
+
+- `task-manager-backend` → GitHub → deploy to Render  
+- `task-manager-frontend` → GitHub → deploy to Vercel  
+
+---
+
+👉 Do you want me to also give you the **`.env.example` contents** for both repos so that they’re copy-paste ready for your GitHub push?
