@@ -1,41 +1,49 @@
-# 📝 Frontend README.md (React.js + React Query)
+# 🖥️ Task Manager Frontend
 
-```markdown
-# 🖥️ Task Manager UI (Frontend)
-
-This is the **Next.js (App Router) frontend** for the Task Manager app.  
-It provides a clean UI for **register/login and managing tasks**.
+This is the **React (Vite)** frontend for the Task Manager App.  
+It allows users to **register, login, and manage tasks** (create, update, delete, search, filter).
 
 ---
 
 ## 🚀 Tech Stack
-- React.js
-- React Query (TanStack) for data fetching
-- Axios for API calls
-- TailwindCSS for styling
-- Context API for auth state
+- React (Vite)
+- React Context API (Auth state management)
+- Axios (API calls)
+- TailwindCSS / CSS modules
+- Custom Hooks (debounce)
 
 ---
 
 ## 📂 Project Structure
 frontend/
-├── app/
-│ ├── globals.css
-│ ├── layout.tsx
-│ ├── page.tsx
-│ ├── login/page.tsx
-│ ├── register/page.tsx
-│ ├── dashboard/page.tsx
-│ └── tasks/
-│ ├── new/page.tsx
-│ └── [id]/page.tsx
-├── components/
-│ ├── Navbar.tsx
-│ └── TaskForm.tsx
-├── context/AuthContext.tsx
-├── lib/axios.ts
-├── package.json
-└── .env.local.example
+├── public/ # static assets
+├── src/
+│ ├── api/ # API helpers (axios instance)
+│ │ └── axios.js
+│ ├── assets/ # images/icons
+│ ├── components/ # reusable UI
+│ │ ├── TaskForm.jsx
+│ │ └── TaskItem.jsx
+│ ├── constants/ # constants for API, messages
+│ │ ├── api.js
+│ │ ├── messages.js
+│ │ └── options.js
+│ ├── context/ # Auth context
+│ │ ├── AuthContext.jsx
+│ │ └── AuthProvider.jsx
+│ ├── hooks/ # custom hooks
+│ │ └── useDebounce.js
+│ ├── pages/ # pages (routed in App.jsx)
+│ │ ├── Dashboard.jsx
+│ │ ├── Login.jsx
+│ │ └── Register.jsx
+│ ├── App.jsx
+│ ├── App.css
+│ ├── index.css
+│ └── main.jsx
+├── .env
+├── vite.config.js
+└── package.json
 
 ---
 
@@ -43,47 +51,41 @@ frontend/
 
 ### 1. Clone repo
 ```bash
-git clone https://github.com/your-username/task-manager-frontend.git
+git clone https://github.com/99-tejrajdewangan/task-management-frontend
 cd task-manager-frontend
+
 2. Install dependencies
-bash
-Copy code
 npm install
+
 3. Configure environment variables
-Create .env.local file from .env.local.example:
+Create a .env file in root:
+VITE_API_URL=https://task-management-backend-3-fsye.onrender.com
+👉 Change this to your deployed backend when live:
+VITE_API_URL=https://task-management-backend-3-fsye.onrender.com
 
-bash
-Copy code
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
-👉 Change this URL to your deployed backend when hosting (e.g. https://your-api.onrender.com/api).
-
-4. Run frontend
-bash
-Copy code
+4. Run frontend (dev mode)
 npm run dev
-Frontend runs on → http://localhost:3000
+App will run on → http://localhost:5173
 
-🔗 Pages
-/login → Login page
+🔗 Available Pages
+/login → Login form
 
-/register → Register page
+/register → Register form
 
-/dashboard → Task dashboard (list + search + filter)
+/dashboard → Task list (CRUD, search, filter)
 
-/tasks/new → Create task
+🛠️ Deployment
+Deploy on Vercel (recommended) or Netlify.
 
-/tasks/[id] → Edit task
+Add environment variable in hosting platform:
 
-yaml
-Copy code
+VITE_API_URL=https://your-backend.onrender.com/api
+👨‍💻 Author
+Tejraj Dewangan
 
----
-
-✅ With these two **separate repos + READMEs**, you can push:
-
-- `task-manager-backend` → GitHub → deploy to Render  
-- `task-manager-frontend` → GitHub → deploy to Vercel  
 
 ---
 
-👉 Do you want me to also give you the **`.env.example` contents** for both repos so that they’re copy-paste ready for your GitHub push?
+✅ This README fits your **Vite + React frontend** setup perfectly.  
+
+👉 Do you also want me to now create the **backend README.md** so you have both repos (frontend + backend) polished for GitHub?
